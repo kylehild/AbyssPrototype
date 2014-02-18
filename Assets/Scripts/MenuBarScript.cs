@@ -17,7 +17,10 @@ public class MenuBarScript : MonoBehaviour {
 		
 		GUI.skin = fontSkin;
 		GUI.Label (new Rect (rW*40, rH*0, 200, 100), "Score");
-		GUI.Label (new Rect (rW*40, rH*10, 200, 100), player.GetComponent<PlayerController>().score.ToString("00000"));
+		GUI.Label (new Rect (rW*40, rH*10, 200, 100), player.GetComponent<PlayerController>().getScore().ToString("00000"));
+	
+		GUI.Label (new Rect (rW*300, rH*0, 200, 100), "High Score");
+		GUI.Label (new Rect (rW*300, rH*10, 200, 100), player.GetComponent<PlayerController>().getHighScore().ToString("00000"));
 	}
 }
 
