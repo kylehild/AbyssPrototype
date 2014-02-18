@@ -79,11 +79,16 @@ public class PlayerController : MonoBehaviour {
 					rigidbody2D.gravityScale = 0.5f;
 				else if(itemGotten == "Star(Clone)")
 					GetComponent<BoxCollider2D>().enabled = false;
+				else if(itemGotten == "Shrink(Clone)")
+					transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+				else if(itemGotten == "Grow(Clone)")
+					transform.localScale = new Vector3(2f, 2f, 1f);
 			}
 			else if(itemTime == 0f){
 				itemGotten = null;
 				GetComponent<BoxCollider2D>().enabled = true;
 				rigidbody2D.gravityScale = 1f;
+				transform.localScale = new Vector3(1f, 1f, 1f);
 			}
 
 			itemTime--;
