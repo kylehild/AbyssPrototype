@@ -50,8 +50,10 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ItemScript.cs" />
      <Compile Include="Assets\Scripts\MenuBarScript.cs" />
+     <Compile Include="Assets\Scripts\MeteorScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
+     <Compile Include="Assets\SpikeScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
