@@ -50,8 +50,12 @@ public class FancyRandom : MonoBehaviour {
 			return max - Mathf.Sqrt((1 - val) * (max - min) * (max - mode));
 	}
 
-	public float NextUniform(){
+	public float NextUniform(float min, float max){
+		return Random.Range (min, max);
+	}
 
+	public int NextUniform(int min, int max){
+		return Random.Range (min, max);
 	}
 
 	public bool NextBool(){
@@ -60,6 +64,6 @@ public class FancyRandom : MonoBehaviour {
 	}
 
 	public T NextInArray<T>(T[] array){
-		
+		return array [Random.Range (0, array.Length)];
 	}
 }
