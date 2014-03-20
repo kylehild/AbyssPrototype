@@ -8,7 +8,8 @@ public class ItemScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		transform.position = new Vector3 (Random.Range (-14, 14), player.transform.position.y - 20f, 10f);
+		transform.position = new Vector3 (FancyRandom.NextTriangular(-14, 14, player.transform.position.x), 
+		                                  		player.transform.position.y - 20f, 10f);
 	}
 	
 	void Update(){

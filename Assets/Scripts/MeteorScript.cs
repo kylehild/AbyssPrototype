@@ -8,7 +8,8 @@ public class MeteorScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		transform.position = new Vector3 (Random.Range (-14, 14), player.transform.position.y + 15f, 10f);
+		transform.position = new Vector3 (FancyRandom.NextNormalInRange(-14, 14), 
+		                                  		player.transform.position.y + 15f, 10f);
 	}
 	
 	void Update(){

@@ -8,12 +8,12 @@ public class SpikeScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		float rand = Random.Range (0, 2);
-		if(rand == 1)
-			rand = 11.5f;
-		else rand = -11.5f;
+		float loc;
+		if(FancyRandom.NextBool())
+			loc = 11.5f;
+		else loc = -11.5f;
 
-		transform.position = new Vector3 (rand, player.transform.position.y - 20f, 10f);
+		transform.position = new Vector3 (loc, player.transform.position.y - 20f, 10f);
 	}
 	
 	void Update(){

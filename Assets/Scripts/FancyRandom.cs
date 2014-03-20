@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class FancyRandom : MonoBehaviour {
 
-	private float NextGaussian(){
+	private static float NextGaussian(){
 		float first = Random.value;
 		float second = Random.value;
-		return Mathf.Sqrt(-2.0 * Mathf.Log(first)) * 
-					Mathf.Sin(2.0 * Mathf.PI * second);
+		return Mathf.Sqrt(-2.0f * Mathf.Log(first)) * 
+					Mathf.Sin(2.0f * Mathf.PI * second);
 	}
 
-	public float NextNormalInRange(float min, float max){
+	public static float NextNormalInRange(float min, float max){
 		if(min > max) max = min;
 
 		float mean = (max - min) / 2;
@@ -25,7 +25,7 @@ public class FancyRandom : MonoBehaviour {
 		return val;
 	}
 
-	public float NextNormalCentered(float mean, float stdev, 
+	public static float NextNormalCentered(float mean, float stdev, 
 	             	float min = float.MinValue, float max = float.MaxValue){
 		if(min > max) max = min;
 
@@ -39,7 +39,7 @@ public class FancyRandom : MonoBehaviour {
 		return val;
 	}
 
-	public float NextTriangular(float min, float max, float mode){
+	public static float NextTriangular(float min, float max, float mode){
 		if(min > max) max = min;
 
 		float val = Random.value;
@@ -50,20 +50,20 @@ public class FancyRandom : MonoBehaviour {
 			return max - Mathf.Sqrt((1 - val) * (max - min) * (max - mode));
 	}
 
-	public float NextUniform(float min, float max){
+	public static float NextUniform(float min, float max){
 		return Random.Range (min, max);
 	}
 
-	public int NextUniform(int min, int max){
+	public static int NextUniform(int min, int max){
 		return Random.Range (min, max);
 	}
 
-	public bool NextBool(){
+	public static bool NextBool(){
 		float rand = Random.Range (0, 2);
 		return rand == 1;
 	}
 
-	public T NextInArray<T>(T[] array){
+	public static T NextInArray<T>(T[] array){
 		return array [Random.Range (0, array.Length)];
 	}
 }

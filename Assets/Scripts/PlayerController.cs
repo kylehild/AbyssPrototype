@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 		if(itemFrames < itemFrequency && itemFrames >= 0f) itemFrames++;
 		else if(itemFrames >= itemFrequency){
 			itemFrames = 0f;
-			Instantiate(items[Random.Range (0, items.Length)]);
+			Instantiate(FancyRandom.NextInArray<GameObject>(items));
 		}
 
 		//spawn meteors
@@ -100,8 +100,8 @@ public class PlayerController : MonoBehaviour {
 		if(itemGotten != null){
 			if(itemTime == 300f){
 				additions += 50;
-				if(itemGotten == "Random(Clone)")
-					itemGotten = items[Random.Range (0, items.Length)].name + "(Clone)";
+				while(itemGotten == "Random(Clone)")
+					itemGotten = FancyRandom.NextInArray<GameObject>(items).name + "(Clone)";
 
 				if(itemGotten == "Clock(Clone)")
 					rigidbody2D.gravityScale = 0.5f;
