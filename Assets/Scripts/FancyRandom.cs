@@ -33,7 +33,7 @@ public class FancyRandom : MonoBehaviour {
 
 		if(min > float.MinValue && val < min)
 			val = min;
-		else if(max > float.MaxValue && val > max)
+		else if(max < float.MaxValue && val > max)
 			val = max;
 
 		return val;

@@ -8,7 +8,7 @@ public class BombController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		transform.position = new Vector3 (FancyRandom.NextNormalCentered(player.transform.position.x, 4, -14, 14),
+		transform.position = new Vector3 (FancyRandom.NextNormalCentered(player.transform.position.x, 4, -13, 13),
 		                                  		player.transform.position.y - 20f, 10f);
 	}
 
