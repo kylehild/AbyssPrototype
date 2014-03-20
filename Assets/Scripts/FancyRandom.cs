@@ -24,7 +24,6 @@ public class FancyRandom : MonoBehaviour {
 		
 		return val;
 	}
-	}
 
 	public float NextNormalCentered(float mean, float stdev, 
 	             	float min = float.MinValue, float max = float.MaxValue){
@@ -49,10 +48,11 @@ public class FancyRandom : MonoBehaviour {
 	}
 
 	public bool NextBool(){
-
+		float rand = Random.Range (0, 2);
+		return rand == 1;
 	}
 
-	public T NextInArray(T[] array){
+	public T NextInArray<T>(T[] array){
 		
 	}
 }
