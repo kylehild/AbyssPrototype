@@ -11,12 +11,25 @@ public class FancyRandom : MonoBehaviour {
 					Mathf.Sin(2.0 * Mathf.PI * second);
 	}
 
-	public float NextNormalInRange(){
+	public float NextNormalInRange(float min, float max){
+		if(min > max) max = min;
 
+		float mean = (max - min) / 2;
+		float stdev = (max - mean) / 3;
+
+		float val = mean + stdev * NextGaussian();
+
+		if(val < min) val = min;
+		else if(val > max) val = max;
+		
+		return val;
+	}
 	}
 
 	public float NextNormalCentered(float mean, float stdev, 
 	             	float min = float.MinValue, float max = float.MaxValue){
+		if(min > max) max = min;
+
 		float val = mean + stdev * NextGaussian();
 
 		if(min > float.MinValue && val < min)
