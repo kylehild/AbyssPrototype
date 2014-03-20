@@ -39,8 +39,15 @@ public class FancyRandom : MonoBehaviour {
 		return val;
 	}
 
-	public float NextTriangular(){
+	public float NextTriangular(float min, float max, float mode){
+		if(min > max) max = min;
 
+		float val = Random.value;
+		float bound = (mode - min) / (max - min);
+		if (val <= bound)
+			return min + Mathf.Sqrt(val * (max - min) * (mode - min));
+		else
+			return max - Mathf.Sqrt((1 - val) * (max - min) * (max - mode));
 	}
 
 	public float NextUniform(){
